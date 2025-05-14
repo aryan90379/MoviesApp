@@ -1,16 +1,23 @@
 import { Stack } from "expo-router";
-import './globals.css' ;
+import './globals.css';
+import { StatusBar } from "react-native";
 
 export default function RootLayout() {
-  return <Stack>  
+  return (
 
-    <Stack.Screen // hides the type group header
-    name = "(tabs)"
-    options={{headerShown: false}}
-    />
-    <Stack.Screen
-    name = "movies/[id]"
-    options={{headerShown: false}}
-    />
-  </Stack>;
+    <>
+      <StatusBar hidden={true} />
+      <Stack>
+
+        <Stack.Screen // hides the type group header
+          name="(tabs)"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="movies/[id]"
+          options={{ headerShown: false }}
+        />
+      </Stack>;
+    </>
+  )
 }
